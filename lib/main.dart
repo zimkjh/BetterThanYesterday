@@ -1,10 +1,10 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(GetMaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -108,6 +108,8 @@ class _MyHomePageState extends State<MyHomePage> {
 class GeneratorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Controller c = Get.put(Controller());
+
     var appState = context.watch<MyAppState>();
     var pair = appState.current;
 
@@ -142,6 +144,14 @@ class GeneratorPage extends StatelessWidget {
                 child: Text('Next'),
               ),
             ],
+          ),
+          FloatingActionButton(onPressed: c.increment, child: Icon(Icons.add)),
+          Obx(() {
+            return Text("Clicks: ${c.count}");
+          }),
+          ElevatedButton(
+            child: Text("Go to Other"),
+            onPressed: () => Get.to(Other()),
           ),
         ],
       ),
@@ -202,5 +212,21 @@ class FavoritesPage extends StatelessWidget {
           ),
       ],
     );
+  }
+}
+
+class Controller extends GetxController {
+  var count = 0.obs;
+  increment() => count++;
+}
+
+class Other extends StatelessWidget {
+  // You can ask Get to find a Controller that is being used by another page and redirect you to it.
+  final Controller c = Get.find();
+
+  @override
+  Widget build(context) {
+    // Access the updated count variable
+    return Scaffold(body: Center(child: Text("${c.count}")));
   }
 }
