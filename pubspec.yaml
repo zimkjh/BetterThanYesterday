@@ -2,12 +2,12 @@ name: bty
 description: "Better than Yesterday"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 0.0.1+1
 
 environment:
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -44,22 +44,20 @@ flutter:
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Suite
+      fonts:
+        - asset: fonts/SUITE-Light.otf
+          weight: 300
+        - asset: fonts/SUITE-Regular.otf
+          weight: 400
+        - asset: fonts/SUITE-Medium.otf
+          weight: 500
+        - asset: fonts/SUITE-SemiBold.otf
+          weight: 600
+        - asset: fonts/SUITE-Bold.otf
+          weight: 700
+        - asset: fonts/SUITE-ExtraBold.otf
+          weight: 800
+        - asset: fonts/SUITE-Heavy.otf
+          weight: 900

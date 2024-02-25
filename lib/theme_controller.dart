@@ -12,7 +12,7 @@ class ThemeController extends GetxService {
     textTheme: const TextTheme(
       bodyMedium: TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
     ),
-    fontFamily: 'todo',
+    fontFamily: 'Suite',
   );
 
   ThemeData get currentTheme => _defaultTheme;
