@@ -1,16 +1,12 @@
-import 'package:bty/theme_controller.dart';
+import 'package:bty/app_theme.dart';
 import 'package:bty/ui/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  Get.put(ThemeController());
-
-  final ThemeController themeController = Get.find<ThemeController>();
-
   runApp(
     GetMaterialApp(
-      theme: themeController.currentTheme,
+      theme: AppTheme.defaultTheme,
       initialRoute: MainScreen.routeName,
       getPages: [
         GetPage(
