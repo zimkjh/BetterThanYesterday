@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MainScreen extends StatelessWidget {
-  static const routeName = "/";
+class IntroScreen extends StatelessWidget {
+  static const routeName = "/intro";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          SizedBox(height: 260),
           Text(
             'Write the name of the challenge\nyou\'d like to stick with',
             style: Theme.of(context).textTheme.titleLarge,
@@ -25,7 +26,7 @@ class MainScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          Spacer(),
           Container(
             width: Get.width,
             height: 55,
@@ -43,7 +44,8 @@ class MainScreen extends StatelessWidget {
                     ),
               ),
             ),
-          )
+          ),
+          SizedBox(height: MediaQuery.of(context).padding.bottom),
         ],
       ),
     );
