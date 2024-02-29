@@ -1,6 +1,7 @@
-import 'package:bty/app_theme.dart';
-import 'package:bty/intro/intro_screen.dart';
-import 'package:bty/main/main_screen.dart';
+import 'package:bty/app/core/theme/app_theme.dart';
+import 'package:bty/app/modules/intro/page.dart';
+import 'package:bty/app/modules/main/page.dart';
+import 'package:bty/app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,12 +12,12 @@ void main() {
       initialRoute: MainScreen.routeName,
       getPages: [
         GetPage(
-          name: MainScreen.routeName,
+          name: Routes.INITIAL,
           page: () => MainScreen(),
           transition: Transition.noTransition,
         ),
         GetPage(
-          name: IntroScreen.routeName,
+          name: Routes.INTRO,
           page: () => IntroScreen(),
           transition: Transition.rightToLeft,
         ),

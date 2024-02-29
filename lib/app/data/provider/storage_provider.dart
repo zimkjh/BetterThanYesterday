@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LocalController {
+class StorageProvider {
   static const _keyIsSavedFirstGoal = "is.saved.first.goal";
   late SharedPreferences _prefs;
 
-  LocalController(SharedPreferences prefs) {
+  StorageProvider(SharedPreferences prefs) {
     _prefs = prefs;
   }
 
