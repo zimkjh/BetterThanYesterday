@@ -1,4 +1,5 @@
 import 'package:bty/intro/input_box.dart';
+import 'package:bty/intro/intro_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +8,8 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(IntroController());
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,

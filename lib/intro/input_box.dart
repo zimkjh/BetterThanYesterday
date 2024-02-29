@@ -1,10 +1,8 @@
+import 'package:bty/intro/intro_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class InputBox extends StatelessWidget {
-  const InputBox({
-    super.key,
-  });
-
+class InputBox extends GetView<IntroController> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,6 +20,9 @@ class InputBox extends StatelessWidget {
           maxLines: null,
           minLines: null,
           expands: true,
+          onChanged: (value) {
+            controller.inputText = value;
+          },
         ),
       ),
     );
