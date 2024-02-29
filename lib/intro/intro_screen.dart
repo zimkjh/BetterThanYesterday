@@ -1,3 +1,4 @@
+import 'package:bty/intro/input_box.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,19 +14,10 @@ class IntroScreen extends StatelessWidget {
           SizedBox(height: 260),
           Text(
             'Write the name of the challenge\nyou\'d like to stick with',
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.center,
           ),
-          Padding(
-            padding: const EdgeInsets.all(33),
-            child: Container(
-              height: 190,
-              decoration: BoxDecoration(
-                color: Theme.of(context).secondaryHeaderColor,
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
+          InputBox(),
           Spacer(),
           Container(
             width: Get.width,

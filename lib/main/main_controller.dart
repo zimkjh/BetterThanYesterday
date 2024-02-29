@@ -18,13 +18,11 @@ class MainController extends GetxController {
     localProvider = Get.find<LocalController>();
 
     if (!isSavedFirstGoal) {
-      debugPrint('h?');
-
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         Get.toNamed(IntroScreen.routeName);
       });
     } else {
-      debugPrint('wow');
+      //todo
     }
   }
 }
