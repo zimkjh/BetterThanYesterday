@@ -12,9 +12,18 @@ class InitialPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: MediaQuery.of(context).padding.top),
-          Text(
-            'My\nChallenges',
-            style: title1,
+          Container(
+            alignment: Alignment.centerRight,
+            padding: EdgeInsets.symmetric(horizontal: 19),
+            child: Image.asset('assets/images/menu.png'),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'My\nChallenges',
+              textAlign: TextAlign.left,
+              style: title1,
+            ),
           )
         ],
       ),
