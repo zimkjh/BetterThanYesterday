@@ -1,3 +1,4 @@
+import 'package:bty/app/core/language/app_translation.dart';
 import 'package:bty/app/core/theme/app_theme.dart';
 import 'package:bty/app/routes/app_pages.dart';
 import 'package:bty/app/routes/app_routes.dart';
@@ -13,6 +14,9 @@ void main() async {
       theme: AppTheme.defaultTheme,
       initialRoute: Routes.INITIAL,
       getPages: AppPages.pages,
+      translations: AppTranslation(),
+      locale: Get.deviceLocale,
+      fallbackLocale: Locale('en'),
     ),
   );
 }

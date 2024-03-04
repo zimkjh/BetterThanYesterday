@@ -20,11 +20,11 @@ class InitialPage extends StatelessWidget {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              'My\nChallenges',
+              'initial_title'.tr,
               textAlign: TextAlign.left,
               style: title1,
             ),
-          )
+          ),
         ],
       ),
     );
