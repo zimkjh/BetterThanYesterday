@@ -1,23 +1,18 @@
+import 'package:bty/app/data/provider/local_provider.dart';
 import 'package:bty/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 class InitialController extends GetxController {
-  final box = GetStorage();
-
+  final localProvider = LocalProvider();
   @override
   Future<void> onInit() async {
     super.onInit();
 
-    const keyIsSavedFirstGoal = 'isSavedFirstGoal';
-    box.writeIfNull(keyIsSavedFirstGoal, false);
-    if (!box.read(keyIsSavedFirstGoal) == true) {
+    if (!localProvider.getIsSavedFirstGoal()) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         Get.toNamed(Routes.INTRO);
       });
-    } else {
-      //todo
     }
   }
 }

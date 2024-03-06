@@ -1,20 +1,18 @@
-import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
 class LocalProvider {
-  static final _box = GetStorage();
+  static final box = GetStorage();
 
   static const _keyIsSavedFirstGoal = "is.saved.first.goal";
 
-  LocalProvider() {
-    debugPrint('localprovider init');
-  }
+  LocalProvider();
 
   bool getIsSavedFirstGoal() {
-    return _box.read(_keyIsSavedFirstGoal);
+    box.writeIfNull(_keyIsSavedFirstGoal, false);
+    return box.read(_keyIsSavedFirstGoal);
   }
 
   Future<void> setIsSavedFirstGoal(bool value) {
-    return _box.write(_keyIsSavedFirstGoal, value);
+    return box.write(_keyIsSavedFirstGoal, value);
   }
 }
