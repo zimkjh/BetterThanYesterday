@@ -10,6 +10,8 @@ class InitialPage extends StatelessWidget {
 
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: MediaQuery.of(context).padding.top),
           Container(
@@ -19,6 +21,7 @@ class InitialPage extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.centerLeft,
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 19),
             child: Text(
               'initial_title'.tr,
               textAlign: TextAlign.left,
