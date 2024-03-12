@@ -1,6 +1,7 @@
 import 'package:bty/app/modules/intro/cta_button.dart';
 import 'package:bty/app/modules/intro/input_box.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class IntroPage extends StatelessWidget {
   @override
@@ -11,8 +12,7 @@ class IntroPage extends StatelessWidget {
         children: [
           SizedBox(height: 260),
           Text(
-            //todo translation
-            'Write the name of the challenge\nyou\'d like to stick with',
+            'intro_write_goal'.tr,
             style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.center,
           ),

@@ -17,7 +17,7 @@ class CtaButton extends GetView<IntroController> {
         margin: EdgeInsets.symmetric(horizontal: 20),
         child: Center(
           child: Text(
-            'Submit',
+            'intro_cta_button'.tr,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,

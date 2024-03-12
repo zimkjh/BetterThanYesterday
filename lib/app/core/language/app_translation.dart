@@ -4,9 +4,14 @@ class AppTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en': {
+          'intro_write_goal':
+              'Write the name of the challenge\nyou\'d like to stick with',
+          'intro_cta_button': 'Submit',
           'this_week': 'This Week',
         },
         'ko': {
+          'intro_write_goal': '자주 실천할 목표를 적어주세요',
+          'intro_cta_button': '저장하기',
           'this_week': '이번주',
         }
       };
