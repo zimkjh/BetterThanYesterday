@@ -5,6 +5,11 @@ import 'package:get/get.dart';
 
 class InitialController extends GetxController {
   final localProvider = LocalProvider();
+
+  final _goals = Rx<List<int>?>(null);
+  List<int>? get goals => _goals.value;
+  set goals(List<int>? value) => _goals.value = value;
+
   @override
   Future<void> onInit() async {
     super.onInit();
@@ -13,6 +18,6 @@ class InitialController extends GetxController {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         Get.toNamed(Routes.INTRO);
       });
-    }
+    } else {}
   }
 }

@@ -11,6 +11,7 @@ class IntroPage extends StatelessWidget {
         children: [
           SizedBox(height: 260),
           Text(
+            //todo translation
             'Write the name of the challenge\nyou\'d like to stick with',
             style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.center,
