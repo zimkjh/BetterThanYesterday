@@ -14,16 +14,21 @@ class InitialPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: MediaQuery.of(context).padding.top),
-          Container(
-            alignment: Alignment.centerRight,
-            padding: EdgeInsets.symmetric(horizontal: 19),
-            child: Image.asset('assets/images/menu.png'),
+          SizedBox(
+            width: Get.width,
+            child: Container(
+              alignment: Alignment.centerRight,
+              margin: EdgeInsets.symmetric(horizontal: 22, vertical: 8),
+              height: 24,
+              width: 24,
+              child: Image.asset('assets/images/menu.png'),
+            ),
           ),
           Container(
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.symmetric(horizontal: 24, vertical: 19),
             child: Text(
-              'initial_title'.tr,
+              'this_week'.tr,
               textAlign: TextAlign.left,
               style: title1,
             ),

@@ -4,10 +4,10 @@ class AppTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en': {
-          'initial_title': 'This Week',
+          'this_week': 'This Week',
         },
         'ko': {
-          'initial_title': '이번주',
+          'this_week': '이번주',
         }
       };
 }
