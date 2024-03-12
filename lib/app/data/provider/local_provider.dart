@@ -20,9 +20,8 @@ class LocalProvider {
 
   List<Goal> getGoals() {
     box.writeIfNull(_keyGoals, []);
-    final list = box.read(_keyGoals) as List<Map<String, dynamic>>;
-
-    return list.map((e) => Goal.fromJson(e)).toList();
+    final list = box.read(_keyGoals) ?? [];
+    return list.map<Goal>((e) => Goal.fromJson(e)).toList();
   }
 
   Future<void> setGoals(List<Goal> value) {
