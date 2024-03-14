@@ -1,3 +1,4 @@
+import 'package:bty/app/core/theme/text_theme.dart';
 import 'package:bty/app/modules/intro/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,10 +19,10 @@ class CtaButton extends GetView<IntroController> {
         child: Center(
           child: Text(
             'intro_cta_button'.tr,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w800,
-                ),
+            style: title2.copyWith(
+              color: Colors.white,
+              fontWeight: FontWeight.w800,
+            ),
           ),
         ),
       ),

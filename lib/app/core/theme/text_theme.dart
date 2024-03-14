@@ -6,6 +6,12 @@ final TextStyle title1 = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+final TextStyle title2 = TextStyle(
+  color: Colors.black,
+  fontSize: 16,
+  fontWeight: FontWeight.w600,
+);
+
 final TextStyle content1 = TextStyle(
   color: Colors.black,
   fontSize: 20,

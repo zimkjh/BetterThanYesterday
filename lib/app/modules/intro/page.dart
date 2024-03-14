@@ -1,3 +1,4 @@
+import 'package:bty/app/core/theme/text_theme.dart';
 import 'package:bty/app/modules/intro/cta_button.dart';
 import 'package:bty/app/modules/intro/input_box.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class IntroPage extends StatelessWidget {
           SizedBox(height: 260),
           Text(
             'intro_write_goal'.tr,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: title2,
             textAlign: TextAlign.center,
           ),
           InputBox(),
