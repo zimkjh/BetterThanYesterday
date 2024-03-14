@@ -1,4 +1,5 @@
 import 'package:bty/app/modules/initial/controller.dart';
+import 'package:bty/app/modules/initial/goal_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,11 +12,7 @@ class GoalList extends GetView<InitialController> {
       child: ListView.builder(
         itemCount: controller.goals.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            color: Colors.red,
-            height: 200,
-            child: Text(controller.goals[index].title),
-          );
+          return GoalItem(controller.goals[index]);
         },
       ),
     );
