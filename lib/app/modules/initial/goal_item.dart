@@ -27,9 +27,12 @@ class GoalItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            goal.title,
-            style: content1,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: itemPadding * 2),
+            child: Text(
+              goal.title,
+              style: content1,
+            ),
           ),
           SizedBox(height: 2),
           Row(

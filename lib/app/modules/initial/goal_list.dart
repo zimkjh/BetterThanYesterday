@@ -10,6 +10,7 @@ class GoalList extends GetView<InitialController> {
       color: Colors.blue,
       alignment: Alignment.topCenter,
       child: ListView.builder(
+        padding: EdgeInsets.zero,
         itemCount: controller.goals.length,
         itemBuilder: (BuildContext context, int index) {
           return GoalItem(controller.goals[index]);
