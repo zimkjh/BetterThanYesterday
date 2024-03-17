@@ -19,7 +19,6 @@ class GoalItem extends StatelessWidget {
     return Container(
       width: Get.width,
       height: 82,
-      color: Colors.yellow,
       padding: EdgeInsets.symmetric(
         vertical: 10,
         horizontal: horizontalPadding,

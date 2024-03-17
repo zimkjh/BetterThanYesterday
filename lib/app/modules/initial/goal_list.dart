@@ -7,7 +7,6 @@ class GoalList extends GetView<InitialController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
       alignment: Alignment.topCenter,
       child: ListView.builder(
         padding: EdgeInsets.zero,
