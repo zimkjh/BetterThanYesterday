@@ -1,10 +1,10 @@
 import 'package:bty/app/core/theme/text_theme.dart';
-import 'package:bty/app/modules/intro/cta_button.dart';
-import 'package:bty/app/modules/intro/input_box.dart';
+import 'package:bty/app/modules/add_goal/cta_button.dart';
+import 'package:bty/app/modules/add_goal/input_box.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class IntroPage extends StatelessWidget {
+class AddGoalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

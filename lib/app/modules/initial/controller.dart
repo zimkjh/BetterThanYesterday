@@ -18,7 +18,7 @@ class InitialController extends GetxController {
 
     if (goals.isEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        Get.toNamed(Routes.INTRO);
+        Get.toNamed(Routes.ADDGOAL);
       });
     }
   }
