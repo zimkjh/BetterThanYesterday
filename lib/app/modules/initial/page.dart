@@ -21,14 +21,16 @@ class InitialPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: MediaQuery.of(context).padding.top),
-                SizedBox(
+                Container(
                   width: Get.width,
+                  height: 38,
+                  alignment: Alignment.centerRight,
+                  padding: EdgeInsets.only(right: 20),
                   child: Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.symmetric(horizontal: 22, vertical: 8),
-                    height: 24,
-                    width: 24,
-                    child: Image.asset('assets/images/menu.png'),
+                    height: 20,
+                    width: 20,
+                    child: Icon(Icons.settings_outlined),
                   ),
                 ),
                 Container(
