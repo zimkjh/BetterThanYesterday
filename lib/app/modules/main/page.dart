@@ -1,14 +1,14 @@
 import 'package:bty/app/core/theme/text_theme.dart';
-import 'package:bty/app/modules/initial/controller.dart';
-import 'package:bty/app/modules/initial/goal_add_button.dart';
-import 'package:bty/app/modules/initial/goal_list.dart';
+import 'package:bty/app/modules/main/controller.dart';
+import 'package:bty/app/modules/main/goal_add_button.dart';
+import 'package:bty/app/modules/main/goal_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class InitialPage extends StatelessWidget {
+class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Get.put(InitialController());
+    Get.put(MainController());
 
     return Scaffold(
       body: SizedBox(

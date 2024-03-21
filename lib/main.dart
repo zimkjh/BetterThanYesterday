@@ -12,7 +12,7 @@ void main() async {
   runApp(
     GetMaterialApp(
       theme: AppTheme.defaultTheme,
-      initialRoute: Routes.INITIAL,
+      initialRoute: Routes.MAIN,
       getPages: AppPages.pages,
       translations: AppTranslation(),
       locale: Get.deviceLocale,

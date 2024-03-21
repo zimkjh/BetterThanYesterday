@@ -1,6 +1,6 @@
 import 'package:bty/app/core/theme/text_theme.dart';
 import 'package:bty/app/data/model/goal.dart';
-import 'package:bty/app/modules/initial/goal_day.dart';
+import 'package:bty/app/modules/main/goal_day.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

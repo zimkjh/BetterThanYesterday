@@ -14,6 +14,6 @@ class IntroController extends GetxController {
     localProvider.setIsSavedFirstGoal(true);
     final initialGoal = Goal(0, inputText, 0xFF0BC37CF);
     await localProvider.setGoals([initialGoal]);
-    Get.toNamed(Routes.INITIAL);
+    Get.toNamed(Routes.MAIN);
   }
 }

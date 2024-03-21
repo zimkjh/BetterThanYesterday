@@ -4,7 +4,7 @@ import 'package:bty/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class InitialController extends GetxController {
+class MainController extends GetxController {
   final localProvider = LocalProvider();
 
   final _goals = Rx<List<Goal>>([]);
