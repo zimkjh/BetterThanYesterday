@@ -1,7 +1,8 @@
 import 'package:bty/app/core/theme/text_theme.dart';
+import 'package:bty/app/modules/main/calendar_widget.dart';
 import 'package:bty/app/modules/main/controller.dart';
-import 'package:bty/app/modules/main/goal_add_button.dart';
 import 'package:bty/app/modules/main/goal_list.dart';
+import 'package:bty/app/modules/main/header_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,43 +15,25 @@ class MainPage extends StatelessWidget {
       body: SizedBox(
         width: Get.width,
         height: Get.height,
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: MediaQuery.of(context).padding.top),
-                Container(
-                  width: Get.width,
-                  height: 38,
-                  alignment: Alignment.centerRight,
-                  padding: EdgeInsets.only(right: 20),
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    height: 20,
-                    width: 20,
-                    child: Icon(Icons.settings_outlined),
-                  ),
-                ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 19),
-                  child: Text(
-                    'this_week'.tr,
-                    textAlign: TextAlign.left,
-                    style: title1,
-                  ),
-                ),
-                Expanded(
-                  child: GoalList(),
-                ),
-              ],
+            SizedBox(height: MediaQuery.of(context).padding.top),
+            HeaderWidget(),
+            SizedBox(height: 20),
+            CalenderWidget(),
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 19),
+              child: Text(
+                'this_week'.tr,
+                textAlign: TextAlign.left,
+                style: title1,
+              ),
             ),
-            Positioned(
-              right: 24,
-              bottom: MediaQuery.of(context).padding.bottom,
-              child: GoalAddButton(),
+            Expanded(
+              child: GoalList(),
             ),
           ],
         ),

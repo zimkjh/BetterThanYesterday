@@ -11,7 +11,7 @@ class GoalDay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: ColorTheme.lightGray1,
+        color: AppColors.lightGray1,
         borderRadius: BorderRadius.circular(4),
         boxShadow: [
           BoxShadow(

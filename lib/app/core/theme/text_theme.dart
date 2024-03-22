@@ -17,3 +17,15 @@ final TextStyle content1 = TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.w600,
 );
+
+final TextStyle item1 = TextStyle(
+  color: Colors.black,
+  fontSize: 14,
+  fontWeight: FontWeight.w800,
+);
+
+final TextStyle item2 = TextStyle(
+  color: Colors.black,
+  fontSize: 12,
+  fontWeight: FontWeight.w800,
+);

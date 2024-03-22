@@ -5,7 +5,7 @@ class AppTheme {
   static ThemeData defaultTheme = ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: ColorTheme.green1,
+      seedColor: AppColors.green1,
       brightness: Brightness.light,
       background: Colors.white,
     ),
