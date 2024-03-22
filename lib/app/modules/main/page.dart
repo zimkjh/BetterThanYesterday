@@ -1,5 +1,5 @@
 import 'package:bty/app/core/theme/text_theme.dart';
-import 'package:bty/app/modules/main/calendar_widget.dart';
+import 'package:bty/app/modules/main/calendar_view.dart';
 import 'package:bty/app/modules/main/controller.dart';
 import 'package:bty/app/modules/main/goal_list.dart';
 import 'package:bty/app/modules/main/header_widget.dart';
@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).padding.top),
             HeaderWidget(),
             SizedBox(height: 20),
-            CalenderWidget(),
+            CalenderView(),
             Container(
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 19),

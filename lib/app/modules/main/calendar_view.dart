@@ -1,9 +1,10 @@
 import 'package:bty/app/modules/main/calendar_dayoftheweek_widget.dart';
-import 'package:bty/app/modules/main/calendar_header_widget.dart';
+import 'package:bty/app/modules/main/calendar_header_view.dart';
+import 'package:bty/app/modules/main/calender_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CalenderWidget extends StatelessWidget {
+class CalenderView extends StatelessWidget {
   static const double horizontalMargin = 6;
 
   @override
@@ -16,9 +17,10 @@ class CalenderWidget extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 9),
-          CalenderHeaderWidget(now),
+          CalenderHeaderView(now),
           SizedBox(height: 10),
           CalendarDayOfTheWeekWidget(),
+          CalenderGridView(),
         ],
       ),
     );

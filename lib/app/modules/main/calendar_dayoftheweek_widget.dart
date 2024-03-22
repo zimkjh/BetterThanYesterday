@@ -1,5 +1,5 @@
 import 'package:bty/app/core/theme/text_theme.dart';
-import 'package:bty/app/modules/main/calendar_widget.dart';
+import 'package:bty/app/modules/main/calendar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -12,7 +12,7 @@ class CalendarDayOfTheWeekWidget extends StatelessWidget {
       height: 15,
       alignment: Alignment.center,
       margin: EdgeInsets.symmetric(
-        horizontal: CalenderWidget.horizontalMargin,
+        horizontal: CalenderView.horizontalMargin,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

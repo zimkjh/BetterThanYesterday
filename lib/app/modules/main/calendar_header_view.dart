@@ -5,10 +5,10 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-class CalenderHeaderWidget extends StatelessWidget {
+class CalenderHeaderView extends StatelessWidget {
   final DateTime now;
 
-  CalenderHeaderWidget(this.now);
+  CalenderHeaderView(this.now);
 
   @override
   Widget build(BuildContext context) {
