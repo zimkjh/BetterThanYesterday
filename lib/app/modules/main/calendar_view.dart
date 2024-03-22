@@ -4,10 +4,10 @@ import 'package:bty/app/modules/main/calendar_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CalenderView extends StatelessWidget {
-  static const double horizontalMargin = 6;
+class CalendarView extends StatelessWidget {
+  static const double horizontalMargin = 5;
 
-  const CalenderView();
+  const CalendarView();
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,10 @@ class CalenderView extends StatelessWidget {
       child: const Column(
         children: [
           SizedBox(height: 9),
-          CalenderHeaderView(),
+          CalendarHeaderView(),
           SizedBox(height: 10),
           CalendarDayOfTheWeekWidget(),
-          CalenderGridView(),
+          CalendarGridView(),
         ],
       ),
     );

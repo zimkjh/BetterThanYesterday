@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-class CalenderHeaderView extends StatelessWidget {
-  const CalenderHeaderView();
+class CalendarHeaderView extends StatelessWidget {
+  const CalendarHeaderView();
 
   @override
   Widget build(BuildContext context) {

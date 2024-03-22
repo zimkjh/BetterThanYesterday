@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).padding.top),
             HeaderWidget(),
             const SizedBox(height: 20),
-            const CalenderView(),
+            const CalendarView(),
             Container(
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 19),

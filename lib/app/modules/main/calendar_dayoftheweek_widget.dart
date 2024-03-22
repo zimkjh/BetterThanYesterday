@@ -1,7 +1,6 @@
 import 'package:bty/app/core/theme/text_theme.dart';
 import 'package:bty/app/modules/main/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class CalendarDayOfTheWeekWidget extends StatelessWidget {
@@ -9,24 +8,26 @@ class CalendarDayOfTheWeekWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final daysOfWeek = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+
     return Container(
       width: Get.width,
       height: 15,
       alignment: Alignment.center,
       margin: const EdgeInsets.symmetric(
-        horizontal: CalenderView.horizontalMargin,
+        horizontal: CalendarView.horizontalMargin,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text('MON', style: item3),
-          Text('TUE', style: item3),
-          Text('WED', style: item3),
-          Text('THU', style: item3),
-          Text('FRI', style: item3),
-          Text('SAT', style: item3),
-          Text('SUN', style: item3),
-        ],
+        children: daysOfWeek
+            .map(
+              (day) => Container(
+                width: 40,
+                alignment: Alignment.center,
+                child: Text(day, style: plain2),
+              ),
+            )
+            .toList(),
       ),
     );
   }

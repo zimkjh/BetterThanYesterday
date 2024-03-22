@@ -1,9 +1,10 @@
-import 'package:bty/app/modules/main/calender_day_view.dart';
+import 'package:bty/app/modules/main/calendar_day_view.dart';
+import 'package:bty/app/modules/main/calendar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CalenderGridView extends StatelessWidget {
-  const CalenderGridView();
+class CalendarGridView extends StatelessWidget {
+  const CalendarGridView();
   List<Widget> _buildCalendarDays(DateTime currentDate) {
     List<Widget> dayWidgets = [];
 
@@ -29,9 +30,9 @@ class CalenderGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     var now = DateTime.now();
     final calendardays = _buildCalendarDays(now);
-    const horizontalMargin = 5;
     const aspectRatio = 1.1;
-    final itemHeight = (Get.width - horizontalMargin * 2) / 7 / aspectRatio;
+    final itemHeight =
+        (Get.width - CalendarView.horizontalMargin * 2) / 7 / aspectRatio;
     var totalHeight = itemHeight * 4;
 
     if (calendardays.length > 28) {
@@ -42,7 +43,7 @@ class CalenderGridView extends StatelessWidget {
 
     return Container(
       alignment: Alignment.topCenter,
-      width: Get.width - horizontalMargin * 2,
+      width: Get.width - CalendarView.horizontalMargin * 2,
       height: totalHeight,
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
