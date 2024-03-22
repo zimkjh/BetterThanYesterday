@@ -1,17 +1,16 @@
 import 'package:bty/app/core/theme/color_theme.dart';
 import 'package:bty/app/core/theme/text_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class CalenderHeaderView extends StatelessWidget {
-  final DateTime now;
-
-  CalenderHeaderView(this.now);
+  const CalenderHeaderView();
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+
     return SizedBox(
       width: Get.width,
       height: 30,

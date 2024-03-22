@@ -5,13 +5,15 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class CalendarDayOfTheWeekWidget extends StatelessWidget {
+  const CalendarDayOfTheWeekWidget();
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: Get.width,
       height: 15,
       alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(
+      margin: const EdgeInsets.symmetric(
         horizontal: CalenderView.horizontalMargin,
       ),
       child: Row(

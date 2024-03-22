@@ -21,11 +21,11 @@ class MainPage extends StatelessWidget {
           children: [
             SizedBox(height: MediaQuery.of(context).padding.top),
             HeaderWidget(),
-            SizedBox(height: 20),
-            CalenderView(),
+            const SizedBox(height: 20),
+            const CalenderView(),
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 19),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 19),
               child: Text(
                 'this_week'.tr,
                 textAlign: TextAlign.left,
