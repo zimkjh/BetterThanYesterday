@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class GoalItem extends StatelessWidget {
   final Goal goal;
 
-  GoalItem(this.goal);
+  const GoalItem(this.goal);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class GoalItem extends StatelessWidget {
     return Container(
       width: Get.width,
       height: 82,
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: 10,
         horizontal: horizontalPadding,
       ),
@@ -33,7 +33,7 @@ class GoalItem extends StatelessWidget {
               style: content1,
             ),
           ),
-          SizedBox(height: 2),
+          const SizedBox(height: 2),
           Row(
             children: List.generate(
               itemCount,

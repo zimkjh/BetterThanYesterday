@@ -5,7 +5,7 @@ class GoalDay extends StatelessWidget {
   final int index;
   final double width;
 
-  GoalDay(this.index, this.width);
+  const GoalDay(this.index, this.width);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class GoalDay extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
             blurRadius: 4,
           )
         ],

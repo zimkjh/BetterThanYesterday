@@ -17,13 +17,13 @@ class CalendarHeaderView extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           Text(
             '${DateFormat('MMM').format(now)} ${now.year}',
             style: item1,
           ),
           Container(
-            margin: EdgeInsets.only(left: 8, right: 5),
+            margin: const EdgeInsets.only(left: 8, right: 5),
             width: 14,
             height: 14,
             decoration: BoxDecoration(
@@ -31,26 +31,26 @@ class CalendarHeaderView extends StatelessWidget {
               borderRadius: BorderRadius.circular(90),
             ),
           ),
-          Text('3'),
-          Spacer(),
+          const Text('3'),
+          const Spacer(),
           Container(
             width: 30,
             alignment: Alignment.center,
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios,
               size: 15,
             ),
           ),
-          SizedBox(width: 2),
+          const SizedBox(width: 2),
           Container(
             width: 30,
             alignment: Alignment.center,
-            child: Icon(
+            child: const Icon(
               Icons.arrow_forward_ios,
               size: 15,
             ),
           ),
-          SizedBox(width: 7),
+          const SizedBox(width: 7),
           Container(
             width: 36,
             height: 25,
@@ -59,12 +59,12 @@ class CalendarHeaderView extends StatelessWidget {
               color: AppColors.lightGray1,
               borderRadius: BorderRadius.circular(14),
             ),
-            child: Text(
+            child: const Text(
               'M',
               style: item2,
             ),
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
         ],
       ),
     );
