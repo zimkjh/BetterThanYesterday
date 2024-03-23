@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-const TextStyle title1 = TextStyle(
-  fontSize: 25,
-  fontWeight: FontWeight.w700,
-);
 const TextStyle title2 = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w600,

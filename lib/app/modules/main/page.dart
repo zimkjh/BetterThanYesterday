@@ -23,18 +23,6 @@ class MainPage extends StatelessWidget {
             HeaderWidget(),
             const SizedBox(height: 20),
             const CalendarView(),
-            Container(
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 19),
-              child: Text(
-                'this_week'.tr,
-                textAlign: TextAlign.left,
-                style: title1,
-              ),
-            ),
-            Expanded(
-              child: GoalList(),
-            ),
           ],
         ),
       ),
