@@ -18,13 +18,13 @@ class CalendarDayView extends StatelessWidget {
           height: 22,
           decoration: const BoxDecoration(
             color: AppColors.gray2,
-            borderRadius: BorderRadius.all(Radius.circular(90)),
+            borderRadius: BorderRadius.all(Radius.circular(5)),
           ),
         ),
         const SizedBox(height: 3),
         Text(
           day.toString(),
-          style: plain1,
+          style: plain2,
         ),
       ],
     );

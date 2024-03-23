@@ -24,7 +24,7 @@ class CalendarDayOfTheWeekWidget extends StatelessWidget {
               (day) => Container(
                 width: 40,
                 alignment: Alignment.center,
-                child: Text(day, style: plain2),
+                child: Text(day, style: plain3),
               ),
             )
             .toList(),

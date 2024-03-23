@@ -28,7 +28,7 @@ class CalendarHeaderView extends StatelessWidget {
             height: 14,
             decoration: BoxDecoration(
               color: Colors.blue,
-              borderRadius: BorderRadius.circular(90),
+              borderRadius: BorderRadius.circular(5),
             ),
           ),
           const Text('3'),

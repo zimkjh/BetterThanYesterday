@@ -17,10 +17,14 @@ const TextStyle item2 = TextStyle(
   fontWeight: FontWeight.w800,
 );
 const TextStyle plain1 = TextStyle(
-  fontSize: 12,
+  fontSize: 15,
   fontWeight: FontWeight.w500,
 );
 const TextStyle plain2 = TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.w500,
+);
+const TextStyle plain3 = TextStyle(
   fontSize: 9,
   fontWeight: FontWeight.w500,
 );
