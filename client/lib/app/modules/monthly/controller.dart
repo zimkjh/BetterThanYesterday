@@ -59,4 +59,8 @@ class MonthlyController extends GetxController {
   void setNowDay(int day) {
     now = now.copyWith(day: day);
   }
+
+  void addTodo() {
+    debugPrint('he');
+  }
 }

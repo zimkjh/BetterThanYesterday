@@ -11,6 +11,7 @@ class CalendarDayView extends GetView<MonthlyController> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap: () => controller.setNowDay(day),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
