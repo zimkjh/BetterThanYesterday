@@ -1,4 +1,3 @@
-import 'package:bty/app/core/theme/color_theme.dart';
 import 'package:bty/app/core/theme/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -48,20 +47,6 @@ class CalendarHeaderView extends StatelessWidget {
             child: const Icon(
               Icons.arrow_forward_ios,
               size: 15,
-            ),
-          ),
-          const SizedBox(width: 7),
-          Container(
-            width: 36,
-            height: 25,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: AppColors.lightGray1,
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: const Text(
-              'M',
-              style: item2,
             ),
           ),
           const SizedBox(width: 20),
