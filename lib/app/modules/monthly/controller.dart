@@ -4,7 +4,7 @@ import 'package:bty/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MainController extends GetxController {
+class MonthlyController extends GetxController {
   final localProvider = LocalProvider();
 
   final _goals = Rx<List<Todo>>([]);

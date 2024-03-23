@@ -1,14 +1,14 @@
-import 'package:bty/app/modules/main/calendar_view.dart';
-import 'package:bty/app/modules/main/controller.dart';
-import 'package:bty/app/modules/main/todo_zone_view.dart';
-import 'package:bty/app/modules/main/header_widget.dart';
+import 'package:bty/app/modules/monthly/calendar_view.dart';
+import 'package:bty/app/modules/monthly/controller.dart';
+import 'package:bty/app/modules/monthly/todo_zone_view.dart';
+import 'package:bty/app/modules/monthly/header_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MainPage extends StatelessWidget {
+class MonthlyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Get.put(MainController());
+    Get.put(MonthlyController());
 
     return Scaffold(
       body: SizedBox(
