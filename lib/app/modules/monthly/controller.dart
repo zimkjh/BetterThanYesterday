@@ -10,6 +10,10 @@ class MonthlyController extends GetxController {
   final _goals = Rx<List<Todo>>([]);
   List<Todo> get goals => _goals.value;
 
+  final _now = DateTime.now().obs;
+  DateTime get now => _now.value;
+  set now(DateTime value) => _now.value = value;
+
   @override
   Future<void> onInit() async {
     super.onInit();
@@ -21,5 +25,34 @@ class MonthlyController extends GetxController {
         Get.toNamed(Routes.ADDGOAL);
       });
     }
+  }
+
+  void goToPrevMonth() {
+    DateTime prevMonth;
+
+    if (now.month == 1) {
+      prevMonth = DateTime(now.year - 1, 12, 31);
+    } else {
+      DateTime firstDayOfCurrentMonth = DateTime(now.year, now.month, 1);
+      prevMonth = DateTime(
+        now.year,
+        now.month - 1,
+        firstDayOfCurrentMonth.subtract(const Duration(days: 1)).day,
+      );
+    }
+
+    _now.value = prevMonth;
+  }
+
+  void goToNextMonth() {
+    DateTime nextMonth;
+
+    if (now.month == 12) {
+      nextMonth = DateTime(now.year + 1, 1, 1);
+    } else {
+      nextMonth = DateTime(now.year, now.month + 1, 1);
+    }
+
+    _now.value = nextMonth;
   }
 }

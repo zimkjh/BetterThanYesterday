@@ -1,9 +1,10 @@
-import 'package:bty/app/modules/main/calendar_day_view.dart';
-import 'package:bty/app/modules/main/calendar_view.dart';
+import 'package:bty/app/modules/monthly/calendar_day_view.dart';
+import 'package:bty/app/modules/monthly/calendar_view.dart';
+import 'package:bty/app/modules/monthly/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CalendarGridView extends StatelessWidget {
+class CalendarGridView extends GetView<MonthlyController> {
   const CalendarGridView();
   List<Widget> _buildCalendarDays(DateTime currentDate) {
     List<Widget> dayWidgets = [];

@@ -1,5 +1,5 @@
 import 'package:bty/app/data/model/todo.dart';
-import 'package:bty/app/modules/main/todo_view.dart';
+import 'package:bty/app/modules/monthly/todo_view.dart';
 import 'package:flutter/material.dart';
 
 class TodoZoneView extends StatelessWidget {
