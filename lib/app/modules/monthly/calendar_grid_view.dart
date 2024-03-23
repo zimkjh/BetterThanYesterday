@@ -32,7 +32,7 @@ class CalendarGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final calendardays = _buildCalendarDays();
-    const aspectRatio = 1.1;
+    const aspectRatio = 1.05;
     final itemHeight =
         (Get.width - CalendarView.horizontalMargin * 2) / 7 / aspectRatio;
     var totalHeight = itemHeight * 4;
@@ -51,7 +51,7 @@ class CalendarGridView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 7,
-          childAspectRatio: 1.1,
+          childAspectRatio: aspectRatio,
         ),
         padding: EdgeInsets.zero,
         itemCount: calendardays.length,
