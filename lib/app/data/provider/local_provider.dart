@@ -1,4 +1,4 @@
-import 'package:bty/app/data/model/goal.dart';
+import 'package:bty/app/data/model/todo.dart';
 import 'package:get_storage/get_storage.dart';
 
 class LocalProvider {
@@ -18,13 +18,13 @@ class LocalProvider {
     return box.write(_keyIsSavedFirstGoal, value);
   }
 
-  List<Goal> getGoals() {
+  List<Todo> getGoals() {
     box.writeIfNull(_keyGoals, []);
     final list = box.read(_keyGoals) ?? [];
-    return list.map<Goal>((e) => Goal.fromJson(e)).toList();
+    return list.map<Todo>((e) => Todo.fromJson(e)).toList();
   }
 
-  Future<void> setGoals(List<Goal> value) {
+  Future<void> setGoals(List<Todo> value) {
     return box.write(_keyGoals, value.map((e) => e.toJson()).toList());
   }
 }

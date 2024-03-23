@@ -46,6 +46,7 @@ class CalendarGridView extends StatelessWidget {
       width: Get.width - CalendarView.horizontalMargin * 2,
       height: totalHeight,
       child: GridView.builder(
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 7,
           childAspectRatio: 1.1,

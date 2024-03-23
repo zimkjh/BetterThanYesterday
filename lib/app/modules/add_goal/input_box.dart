@@ -14,7 +14,7 @@ class InputBox extends GetView<IntroController> {
           borderRadius: BorderRadius.circular(20),
         ),
         child: TextField(
-          decoration: InputDecoration(border: InputBorder.none),
+          decoration: const InputDecoration(border: InputBorder.none),
           textAlign: TextAlign.center,
           textAlignVertical: TextAlignVertical.center,
           maxLines: null,

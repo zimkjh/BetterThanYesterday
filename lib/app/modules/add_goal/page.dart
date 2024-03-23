@@ -11,14 +11,14 @@ class AddGoalPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: 260),
+          const SizedBox(height: 260),
           Text(
             'intro_write_goal'.tr,
             style: title2,
             textAlign: TextAlign.center,
           ),
           InputBox(),
-          Spacer(),
+          const Spacer(),
           CtaButton(),
           SizedBox(height: MediaQuery.of(context).padding.bottom),
         ],

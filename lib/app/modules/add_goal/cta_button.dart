@@ -15,7 +15,7 @@ class CtaButton extends GetView<IntroController> {
           color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(28),
         ),
-        margin: EdgeInsets.symmetric(horizontal: 20),
+        margin: const EdgeInsets.symmetric(horizontal: 20),
         child: Center(
           child: Text(
             'intro_cta_button'.tr,

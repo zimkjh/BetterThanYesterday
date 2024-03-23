@@ -16,7 +16,7 @@ void main() async {
       getPages: AppPages.pages,
       translations: AppTranslation(),
       locale: Get.deviceLocale,
-      fallbackLocale: Locale('en'),
+      fallbackLocale: const Locale('en'),
     ),
   );
 }
