@@ -1,16 +1,18 @@
 import 'package:bty/app/modules/monthly/calendar_day_view.dart';
 import 'package:bty/app/modules/monthly/calendar_view.dart';
-import 'package:bty/app/modules/monthly/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CalendarGridView extends GetView<MonthlyController> {
-  const CalendarGridView();
-  List<Widget> _buildCalendarDays(DateTime currentDate) {
+class CalendarGridView extends StatelessWidget {
+  final DateTime now;
+
+  const CalendarGridView(this.now);
+
+  List<Widget> _buildCalendarDays() {
     List<Widget> dayWidgets = [];
 
-    DateTime firstOfMonth = DateTime(currentDate.year, currentDate.month, 1);
-    DateTime lastOfMonth = DateTime(currentDate.year, currentDate.month + 1, 0);
+    DateTime firstOfMonth = DateTime(now.year, now.month, 1);
+    DateTime lastOfMonth = DateTime(now.year, now.month + 1, 0);
 
     int startPadding = (firstOfMonth.weekday - 1) % 7;
 
@@ -29,8 +31,7 @@ class CalendarGridView extends GetView<MonthlyController> {
 
   @override
   Widget build(BuildContext context) {
-    var now = DateTime.now();
-    final calendardays = _buildCalendarDays(now);
+    final calendardays = _buildCalendarDays();
     const aspectRatio = 1.1;
     final itemHeight =
         (Get.width - CalendarView.horizontalMargin * 2) / 7 / aspectRatio;

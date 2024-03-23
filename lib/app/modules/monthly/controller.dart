@@ -41,7 +41,7 @@ class MonthlyController extends GetxController {
       );
     }
 
-    _now.value = prevMonth;
+    now = prevMonth;
   }
 
   void goToNextMonth() {
@@ -53,6 +53,6 @@ class MonthlyController extends GetxController {
       nextMonth = DateTime(now.year, now.month + 1, 1);
     }
 
-    _now.value = nextMonth;
+    now = nextMonth;
   }
 }
