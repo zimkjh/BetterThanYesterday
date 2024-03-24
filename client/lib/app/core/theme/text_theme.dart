@@ -4,18 +4,25 @@ const TextStyle title2 = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w600,
 );
+
 const TextStyle content1 = TextStyle(
-  fontSize: 20,
+  fontSize: 14,
   fontWeight: FontWeight.w600,
 );
+
 const TextStyle item1 = TextStyle(
-  fontSize: 14,
+  fontSize: 17,
   fontWeight: FontWeight.w800,
 );
 const TextStyle item2 = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w800,
+);
+const TextStyle item3 = TextStyle(
   fontSize: 12,
   fontWeight: FontWeight.w800,
 );
+
 const TextStyle plain1 = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.w500,
@@ -27,4 +34,9 @@ const TextStyle plain2 = TextStyle(
 const TextStyle plain3 = TextStyle(
   fontSize: 9,
   fontWeight: FontWeight.w500,
+);
+
+const TextStyle heavy1 = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w900,
 );

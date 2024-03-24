@@ -1,6 +1,8 @@
 import 'package:bty/app/core/theme/color_theme.dart';
 import 'package:bty/app/core/theme/text_theme.dart';
+import 'package:bty/app/modules/monthly/add_todo_color.dart';
 import 'package:bty/app/modules/monthly/controller.dart';
+import 'package:bty/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +11,14 @@ class AddTodoButton extends GetView<MonthlyController> {
 
   final height = 35.0;
 
+  static const _todoColors = [
+    AppColors.blue1,
+    AppColors.yellow1,
+    AppColors.pink1,
+    AppColors.green2,
+    AppColors.purple1,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,8 +26,7 @@ class AddTodoButton extends GetView<MonthlyController> {
       height: height,
       alignment: Alignment.centerLeft,
       child: GestureDetector(
-        // onTap: controller.addTodo,
-        onTap: () => debugPrint('wow'),
+        onTap: () => Get.toNamed(Routes.ADDGOAL),
         child: Container(
           height: height,
           margin: const EdgeInsets.only(left: 20),
@@ -50,9 +59,11 @@ class AddTodoButton extends GetView<MonthlyController> {
               const SizedBox(width: 7),
               Text(
                 'add_a_goal'.tr,
-                style: item1,
+                style: item2,
               ),
               const SizedBox(width: 14),
+              ..._todoColors.map((color) => AddTodoColor(color)),
+              const SizedBox(width: 10),
             ],
           ),
         ),

@@ -42,7 +42,7 @@ class CalendarDayView extends GetView<MonthlyController> {
                   ),
                   child: Text(
                     day.toString(),
-                    style: item2.copyWith(color: Colors.white),
+                    style: item3.copyWith(color: Colors.white),
                   ),
                 ),
         ],

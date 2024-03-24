@@ -7,8 +7,7 @@ import 'package:get/get.dart';
 class MonthlyController extends GetxController {
   final localProvider = LocalProvider();
 
-  final _goals = Rx<List<Todo>>([]);
-  List<Todo> get goals => _goals.value;
+  final todoList = RxList<Todo>([]);
 
   final _now = DateTime.now().obs;
   DateTime get now => _now.value;
@@ -18,9 +17,9 @@ class MonthlyController extends GetxController {
   Future<void> onInit() async {
     super.onInit();
 
-    _goals.value = localProvider.getGoals();
+    todoList.addAll(localProvider.getGoals());
 
-    if (goals.isEmpty) {
+    if (todoList.isEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         Get.toNamed(Routes.ADDGOAL);
       });
@@ -60,7 +59,12 @@ class MonthlyController extends GetxController {
     now = now.copyWith(day: day);
   }
 
-  void addTodo() {
-    debugPrint('he');
+  void addTodo(Color color) {
+    final maxId = todoList.isNotEmpty
+        ? todoList.map((todo) => todo.id).reduce((a, b) => a > b ? a : b)
+        : 0;
+    todoList.add(Todo(maxId + 1, '', color));
+
+    //todo add todo put api
   }
 }

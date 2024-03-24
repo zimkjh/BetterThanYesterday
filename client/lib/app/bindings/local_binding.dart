@@ -5,7 +5,7 @@ class LocalBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut(
-      () => IntroController(),
+      () => AddGoalController(),
     );
   }
 }

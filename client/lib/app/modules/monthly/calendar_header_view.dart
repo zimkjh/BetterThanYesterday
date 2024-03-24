@@ -23,7 +23,7 @@ class CalendarHeaderView extends GetView<MonthlyController> {
               children: [
                 Text(
                   '${DateFormat('MMM').format(now)} ${now.year}',
-                  style: item1,
+                  style: item2,
                 ),
                 Container(
                   margin: const EdgeInsets.only(left: 8, right: 5),
