@@ -77,6 +77,13 @@ class AddGoalController extends GetxController {
     Get.back();
   }
 
+  Future<void> deleteTodo() async {
+    if (prevTodo != null) {
+      await localProvider.removeTodoList(prevTodo!);
+    }
+    Get.back();
+  }
+
   void onSelectColor(Color color) {
     _selectedColor.value = color;
   }

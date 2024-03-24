@@ -63,6 +63,12 @@ class LocalProvider extends GetxService {
     return box.write(_keyGoals, todos.map((e) => e.toJson()).toList());
   }
 
+  Future<void> removeTodoList(Todo todo) {
+    todos.removeWhere((element) => element.id == todo.id);
+
+    return box.write(_keyGoals, todos.map((e) => e.toJson()).toList());
+  }
+
   Future<void> addDoneTodo(DateTime dateTime, int todoId) async {
     final normalizedDate = normalizeDate(dateTime);
     if (doneTodos[normalizedDate] == null) {
