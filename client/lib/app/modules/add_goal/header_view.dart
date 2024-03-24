@@ -17,6 +17,7 @@ class HeaderView extends StatelessWidget {
               const SizedBox(width: 10),
               GestureDetector(
                 onTap: () => Get.back(),
+                behavior: HitTestBehavior.opaque,
                 child: const Padding(
                   padding: EdgeInsets.all(12),
                   child: Icon(

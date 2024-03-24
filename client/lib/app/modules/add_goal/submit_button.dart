@@ -45,23 +45,25 @@ class SubmitButton extends GetView<AddGoalController> {
             ),
           ),
           const SizedBox(height: 15),
-          GestureDetector(
-            onTap: controller.deleteTodo,
-            child: Container(
-              width: Get.width,
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: AppColors.lightGray1,
-              ),
-              child: Center(
-                child: Text(
-                  'delete_goal'.tr,
-                  style: content1.copyWith(color: Colors.red),
-                ),
-              ),
-            ),
-          )
+          controller.prevTodo == null
+              ? const SizedBox.shrink()
+              : GestureDetector(
+                  onTap: controller.deleteTodo,
+                  child: Container(
+                    width: Get.width,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: AppColors.lightGray1,
+                    ),
+                    child: Center(
+                      child: Text(
+                        'delete_goal'.tr,
+                        style: content1.copyWith(color: Colors.red),
+                      ),
+                    ),
+                  ),
+                )
         ],
       ),
     );
