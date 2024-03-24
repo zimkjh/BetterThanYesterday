@@ -17,7 +17,7 @@ class CalendarHeaderView extends GetView<MonthlyController> {
         children: [
           const SizedBox(width: 20),
           Obx(() {
-            final now = controller.now;
+            final now = controller.selectedDate;
             return Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -34,8 +34,11 @@ class CalendarHeaderView extends GetView<MonthlyController> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
-                //todo
-                const Text('3'),
+                Text(
+                  controller
+                      .countDoneTodosInMonth(now.year, now.month)
+                      .toString(),
+                ),
               ],
             );
           }),

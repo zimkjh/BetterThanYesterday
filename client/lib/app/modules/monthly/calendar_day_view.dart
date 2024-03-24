@@ -1,5 +1,6 @@
 import 'package:bty/app/core/theme/color_theme.dart';
 import 'package:bty/app/core/theme/text_theme.dart';
+import 'package:bty/app/core/utils/date_utils.dart';
 import 'package:bty/app/modules/monthly/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,16 +19,28 @@ class CalendarDayView extends GetView<MonthlyController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 6),
-          Container(
-            width: 22,
-            height: 22,
-            decoration: const BoxDecoration(
-              color: AppColors.gray2,
-              borderRadius: BorderRadius.all(Radius.circular(5)),
-            ),
+          Obx(
+            () {
+              final thisDateTime = controller.selectedDate.copyWith(day: day);
+              final doneTodos =
+                  controller.doneTodos[normalizeDate(thisDateTime)] ?? [];
+              return Container(
+                width: 22,
+                height: 22,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  color: AppColors.gray2,
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                ),
+                child: Text(
+                  (controller.todos.length - doneTodos.length).toString(),
+                  style: item3.copyWith(color: Colors.white),
+                ),
+              );
+            },
           ),
           const SizedBox(height: 3),
-          controller.now.day != day
+          controller.selectedDate.day != day
               ? Text(
                   day.toString(),
                   style: plain2,

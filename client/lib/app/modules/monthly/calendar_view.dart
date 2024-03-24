@@ -20,7 +20,7 @@ class CalendarView extends GetView<MonthlyController> {
           const CalendarHeaderView(),
           const SizedBox(height: 10),
           const CalendarDayOfTheWeekWidget(),
-          Obx(() => CalendarGridView(controller.now)),
+          Obx(() => CalendarGridView(controller.selectedDate)),
         ],
       ),
     );

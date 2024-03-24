@@ -12,8 +12,7 @@ class TodoZoneView extends GetView<MonthlyController> {
       children: [
         Obx(() {
           return Column(
-            children:
-                controller.todoList.map((todo) => TodoView(todo)).toList(),
+            children: controller.todos.map((todo) => TodoView(todo)).toList(),
           );
         }),
         const SizedBox(height: 20),
