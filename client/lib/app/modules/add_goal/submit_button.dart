@@ -26,7 +26,9 @@ class SubmitButton extends GetView<AddGoalController> {
               boxShadow: [
                 BoxShadow(
                   blurRadius: 4,
-                  color: controller.selectedColor.withOpacity(0.2),
+                  color: controller.inputText.isNotEmpty
+                      ? controller.selectedColor.withOpacity(0.2)
+                      : Colors.white,
                   offset: const Offset(0, 2),
                 )
               ],

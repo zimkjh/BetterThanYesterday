@@ -2,6 +2,7 @@ import 'package:bty/app/core/theme/color_theme.dart';
 import 'package:bty/app/core/theme/text_theme.dart';
 import 'package:bty/app/data/model/todo.dart';
 import 'package:bty/app/modules/monthly/controller.dart';
+import 'package:bty/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +23,6 @@ class TodoView extends GetView<MonthlyController> {
           const SizedBox(width: 11),
           GestureDetector(
             //todo app vibrate
-            //todo localstorage save
             behavior: HitTestBehavior.opaque,
             onTap: () => controller.changeTodoDone(todo),
             child: Padding(
@@ -45,10 +45,24 @@ class TodoView extends GetView<MonthlyController> {
           ),
           Text(todo.title, style: plain1),
           const Spacer(),
-          const Icon(Icons.more_horiz),
-          const SizedBox(width: 22),
+          GestureDetector(
+              onTap: onTapTodoMore,
+              behavior: HitTestBehavior.opaque,
+              child: const Padding(
+                padding: EdgeInsets.all(10),
+                child: Icon(
+                  Icons.more_horiz,
+                  size: 22,
+                  color: AppColors.gray1,
+                ),
+              )),
+          const SizedBox(width: 12),
         ],
       ),
     );
+  }
+
+  void onTapTodoMore() {
+    Get.toNamed(Routes.ADDGOAL, arguments: todo);
   }
 }

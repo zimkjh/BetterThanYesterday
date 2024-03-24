@@ -42,6 +42,15 @@ class LocalProvider extends GetxService {
     return box.write(_keyGoals, value.map((e) => e.toJson()).toList());
   }
 
+  Future<void> updateTodo(Todo todo) {
+    todos.removeWhere((e) => e.id == todo.id);
+
+    todos.add(todo);
+    todos.sort((a, b) => a.color.value.compareTo(b.color.value));
+
+    return box.write(_keyGoals, todos.map((e) => e.toJson()).toList());
+  }
+
   Future<void> addTodoList(String inputText, Color color) {
     final maxId = todos.isNotEmpty
         ? todos.map((todo) => todo.id).reduce((a, b) => a > b ? a : b)

@@ -1,10 +1,13 @@
 import 'package:bty/app/core/theme/color_theme.dart';
+import 'package:bty/app/data/model/todo.dart';
 import 'package:bty/app/data/provider/local_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AddGoalController extends GetxController {
   late LocalProvider localProvider;
+
+  Todo? prevTodo;
 
   final FocusNode focusNode = FocusNode();
   final TextEditingController textEditingController = TextEditingController();
@@ -36,6 +39,16 @@ class AddGoalController extends GetxController {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       focusNode.requestFocus();
     });
+
+    prevTodo = Get.arguments;
+    if (prevTodo != null) {
+      _inputText.value = prevTodo!.title;
+      textEditingController.text = prevTodo!.title;
+
+      if (colors.contains(prevTodo!.color)) {
+        _selectedColor.value = prevTodo!.color;
+      }
+    }
   }
 
   @override
@@ -50,7 +63,17 @@ class AddGoalController extends GetxController {
   }
 
   Future<void> saveTodo() async {
-    await localProvider.addTodoList(inputText, selectedColor);
+    if (inputText.isEmpty) {
+      return;
+    }
+
+    if (prevTodo != null) {
+      prevTodo!.color = selectedColor;
+      prevTodo!.title = inputText;
+      await localProvider.updateTodo(prevTodo!);
+    } else {
+      await localProvider.addTodoList(inputText, selectedColor);
+    }
     Get.back();
   }
 

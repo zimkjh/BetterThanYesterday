@@ -22,20 +22,29 @@ class InputBox extends GetView<AddGoalController> {
               ),
             ),
           ),
-          child: TextField(
-            controller: controller.textEditingController,
-            focusNode: controller.focusNode,
-            style: item2.copyWith(
-              fontSize: 15,
-              color: controller.selectedColor,
+          child: Theme(
+            data: Theme.of(context).copyWith(
+              textSelectionTheme: TextSelectionThemeData(
+                selectionColor: Colors.lightBlueAccent.withOpacity(0.5),
+                selectionHandleColor: Colors.blue,
+              ),
             ),
-            decoration: const InputDecoration(
-              border: InputBorder.none,
+            child: TextField(
+              controller: controller.textEditingController,
+              focusNode: controller.focusNode,
+              cursorColor: Colors.blue,
+              style: item2.copyWith(
+                fontSize: 15,
+                color: controller.selectedColor,
+              ),
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+              ),
+              textAlign: TextAlign.start,
+              textAlignVertical: TextAlignVertical.center,
+              maxLines: 1,
+              onChanged: (value) => controller.onChangeInputText(value),
             ),
-            textAlign: TextAlign.start,
-            textAlignVertical: TextAlignVertical.center,
-            maxLines: 1,
-            onChanged: (value) => controller.onChangeInputText(value),
           ),
         ),
       ),
