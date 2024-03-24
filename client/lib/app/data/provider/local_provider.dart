@@ -9,6 +9,7 @@ class LocalProvider extends GetxService {
 
   static const _keyIsSavedFirstGoal = "is.saved.first.goal";
   static const _keyGoals = "goals";
+  static const _keyDoneTodos = "doneTodos";
 
   final todos = RxList<Todo>([]);
   final doneTodos = RxMap<DateTime, List<int>>({});
@@ -17,7 +18,8 @@ class LocalProvider extends GetxService {
   void onInit() {
     super.onInit();
 
-    todos.addAll(getTodoList());
+    getTodoList();
+    getDoneTodos();
   }
 
   bool getIsSavedFirstGoal() {
@@ -29,10 +31,11 @@ class LocalProvider extends GetxService {
     return box.write(_keyIsSavedFirstGoal, value);
   }
 
-  List<Todo> getTodoList() {
+  void getTodoList() {
     box.writeIfNull(_keyGoals, []);
     final list = box.read(_keyGoals) ?? [];
-    return list.map<Todo>((e) => Todo.fromJson(e)).toList();
+    todos.clear();
+    todos.addAll(list.map<Todo>((e) => Todo.fromJson(e)));
   }
 
   Future<void> setTodoList(List<Todo> value) {
@@ -46,6 +49,8 @@ class LocalProvider extends GetxService {
     todos.add(
       Todo(maxId + 1, inputText, color),
     );
+    todos.sort((a, b) => a.color.value.compareTo(b.color.value));
+
     return box.write(_keyGoals, todos.map((e) => e.toJson()).toList());
   }
 
@@ -58,6 +63,7 @@ class LocalProvider extends GetxService {
       copy += [todoId];
       doneTodos[normalizedDate] = copy;
     }
+    saveDoneTodos();
   }
 
   Future<void> removeDoneTodo(DateTime dateTime, int todoId) async {
@@ -71,5 +77,30 @@ class LocalProvider extends GetxService {
         doneTodos[normalizedDate] = copy;
       }
     }
+    saveDoneTodos();
+  }
+
+  void saveDoneTodos() {
+    final box = GetStorage();
+    Map<String, List<int>> savableMap = {};
+
+    doneTodos.forEach((key, value) {
+      savableMap[key.toIso8601String()] = value;
+    });
+
+    box.write(_keyDoneTodos, savableMap);
+  }
+
+  void getDoneTodos() {
+    final box = GetStorage();
+
+    box.writeIfNull(_keyDoneTodos, {});
+    Map<String, dynamic> storedMap = box.read(_keyDoneTodos);
+
+    doneTodos.clear();
+    storedMap.forEach((key, dynamic value) {
+      List<int> castedValue = List<int>.from(value.map((item) => item as int));
+      doneTodos[DateTime.parse(key)] = castedValue;
+    });
   }
 }
