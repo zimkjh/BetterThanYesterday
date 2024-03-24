@@ -14,19 +14,28 @@ class SubmitButton extends GetView<AddGoalController> {
         horizontal: 25,
         vertical: 20,
       ),
-      child: Container(
-        width: Get.width,
-        height: 50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: AppColors.lightGray3,
-        ),
-        child: GestureDetector(
+      child: Obx(
+        () => GestureDetector(
           onTap: controller.saveTodo,
-          child: Center(
-            child: Text(
-              'add_goal_confirm'.tr,
-              style: content1,
+          child: Container(
+            width: Get.width,
+            height: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: AppColors.lightGray3,
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 4,
+                  color: controller.selectedColor.withOpacity(0.2),
+                  offset: const Offset(0, 2),
+                )
+              ],
+            ),
+            child: Center(
+              child: Text(
+                'add_goal_confirm'.tr,
+                style: content1,
+              ),
             ),
           ),
         ),

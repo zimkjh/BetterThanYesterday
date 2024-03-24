@@ -1,29 +1,20 @@
 import 'package:bty/app/data/model/todo.dart';
 import 'package:bty/app/data/provider/local_provider.dart';
-import 'package:bty/app/routes/app_routes.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MonthlyController extends GetxController {
-  final localProvider = LocalProvider();
+  late LocalProvider localProvider;
 
-  final todoList = RxList<Todo>([]);
+  RxList<Todo> get todoList => localProvider.todoList;
 
   final _now = DateTime.now().obs;
   DateTime get now => _now.value;
   set now(DateTime value) => _now.value = value;
 
   @override
-  Future<void> onInit() async {
+  void onInit() {
     super.onInit();
-
-    todoList.addAll(localProvider.getGoals());
-
-    if (todoList.isEmpty) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        Get.toNamed(Routes.ADDGOAL);
-      });
-    }
+    localProvider = Get.find<LocalProvider>();
   }
 
   void goToPrevMonth() {
@@ -57,14 +48,5 @@ class MonthlyController extends GetxController {
 
   void setNowDay(int day) {
     now = now.copyWith(day: day);
-  }
-
-  void addTodo(Color color) {
-    final maxId = todoList.isNotEmpty
-        ? todoList.map((todo) => todo.id).reduce((a, b) => a > b ? a : b)
-        : 0;
-    todoList.add(Todo(maxId + 1, '', color));
-
-    //todo add todo put api
   }
 }

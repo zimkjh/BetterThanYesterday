@@ -1,5 +1,6 @@
 import 'package:bty/app/core/language/app_translation.dart';
 import 'package:bty/app/core/theme/app_theme.dart';
+import 'package:bty/app/data/provider/local_provider.dart';
 import 'package:bty/app/routes/app_pages.dart';
 import 'package:bty/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:get_storage/get_storage.dart';
 
 void main() async {
   await GetStorage.init();
+  Get.put(LocalProvider());
 
   runApp(
     GetMaterialApp(
